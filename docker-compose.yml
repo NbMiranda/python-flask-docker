@@ -18,8 +18,6 @@ services:
       MYSQL_DATABASE: py
       MYSQL_USER: root
       MYSQL_PASSWORD: root
-    volumes:
-      - ./mysql:/var/lib/mysql
     ports:
       - 3303:3306
 
