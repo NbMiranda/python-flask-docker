@@ -2,18 +2,20 @@ version: "3.3"
 volumes:
   data:
 services:
-  web:
+  app:
     build:
       context: .
       dockerfile: Dockerfile
+    container_name: flask-api
     links:
-      - db
+      - mysql
     volumes:
       - ./:/app
     ports:
       - 8000:8000
-  db:
+  mysql:
     image: mysql:5.7
+    container_name: flask-db
     ports:
       - "3306:3306"
     volumes:

@@ -9,7 +9,8 @@ COPY . .
 
 # Instala as dependências do Python
 RUN pip install --upgrade pip==21.3.1 \
-    && pip install flask pyinstaller
+    && pip install flask pyinstaller \
+    && pip install mysql-connector-python
     
 # Comando padrão a ser executado quando o contêiner for iniciado
 CMD ["python", "app/app.py"]
